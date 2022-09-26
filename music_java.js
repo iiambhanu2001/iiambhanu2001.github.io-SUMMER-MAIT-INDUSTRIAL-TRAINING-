@@ -1,19 +1,20 @@
-
 var songs1 = document.querySelector('audio')
 const playWorking = document.getElementById("play");
 const songName=document.querySelector(".SongName");
 const curruntSinger = document.querySelector(".ArtistName");
-const coverimg= document.querySelector(".Cover img");
+const coverimg= document.querySelector(".backimg");
 let progresstime=document.querySelector(".meter")
 let dur=document.querySelector(".endtime");
 let currenttime=document.querySelector(".starttime");
 let bar=document.querySelector(".progeess")
+
 let songs = [
     {
         audio: "Night Changes",
-        singer: "One D",
-        Cover: "./cover/One-D.jpg",
+        singer: " ONE DIRECTION",
+        Cover: "./cover/oneD.jpg",
         songPath: "./songs/Night-Changes.mp3",
+      
     }
     ,
    
@@ -23,6 +24,7 @@ let songs = [
         singer: "Siddu",
         Cover: "./cover/Siddu.jpg",
         songPath: "./songs/Goat(PagalWorld.com.se).mp3",
+        
 
     }
     ,
@@ -31,34 +33,21 @@ let songs = [
         singer: "Javed ali",
         Cover: "./cover/srivalli.jpg",
         songPath: "./songs/Srivalli(PagalWorld.com.se).mp3",
+       
 
     }
     ,
     {
         audio: "Kesariya",
-        singer: "AR",
+        singer: "Arijit Singh",
         Cover: "./cover/kesariya.jpeg",
         songPath: "./songs/Kesariya(PagalWorld.com.se).mp3",
+       
 
     }
 
 ]
 
-// function playpause(){ playWorking.addEventListener("click",function(){
-// if(songs1.paused){
-//     songs1.play();
-//     playWorking.classList.remove("fa-play");
-//     playWorking.classList.add("fa-pause");
-// }
-// else{
-// songs1.pause();
-// playWorking.classList.remove("fa-pause");
-//         playWorking.classList.add("fa-play")
-
-
-//     }});
-// }
-// playpause();
 let isplaying=false;
 function playMusic(){
 isplaying=true;
@@ -84,6 +73,7 @@ songsIndex=0;
         curruntSinger.textContent=songs.singer;
         coverimg.src=songs.Cover;
         songs1.src=songs.songPath;
+        
         }
       const next = ()=>{
         songsIndex=(songsIndex+1) % songs.length; 
@@ -130,14 +120,6 @@ currsec=`0${currsec}`
 //  ********************* forward-Backward*************************
 
 document.getElementById("Forward").addEventListener("click",next);
-//     // songsIndex=(songsIndex+1) % songs.length; 
-//     // allsongs(songs[songsIndex]);
-   
 
-// });
 document.getElementById("Backward").addEventListener("click",prev);
-//     // songsIndex=(songsIndex- 1 + songs.length) % songs.length; 
-//     // allsongs(songs[songsIndex]);
-   
-// });
 
